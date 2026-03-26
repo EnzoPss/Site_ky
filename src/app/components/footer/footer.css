@@ -1,144 +1,189 @@
-/* ===============================
-   FOOTER
-   =============================== */
+/* ============================================
+   FOOTER WRAPPER
+   ============================================ */
 .footer {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
-  padding: 40px;
-  background: rgba(14, 0, 28, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: white;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  padding: 2.5rem 2rem;
+  margin-top: 4rem;
+
+  /* Image de fond transparente */
+  background-image: url('/img/bois2.png'); /* Chemin de ton image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Transparence globale du footer */
+  background-color: rgba(255, 255, 255, 0.2);
+  
+  /* Effet flou pour lisibilité */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 -3px 15px rgba(80, 140, 180, 0.15);
+
+  color: #1a3a5c;
 }
 
-/* ===============================
-   COLONNES
-   =============================== */
+/* ============================================
+   SECTIONS
+   ============================================ */
 .footer-left,
 .footer-right {
-  width: 50%;
+  flex: 1 1 300px;
 }
 
-/* ===============================
+/* ============================================
    TITRES
-   =============================== */
+   ============================================ */
 .footer h3 {
-  margin-bottom: 15px;
-  color: #c084fc;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #D1E2F3; /* bleu comme le header */
 }
 
-/* ===============================
-   LIENS
-   =============================== */
-.footer-left ul {
-  list-style: none;
+/* ============================================
+   TEXTE
+   ============================================ */
+.footer p,
+.footer a {
+  font-size: 0.95rem;
+  color: #7fb2d3; /* bleu secondaire comme tagline */
+  margin: 0.25rem 0;
+  transition: color 0.3s ease;
 }
 
-.footer-left li {
-  margin: 8px 0;
+.footer a:hover {
+  color: #0d2a45; /* bleu foncé comme hover header */
+  text-decoration: underline;
 }
 
-.footer-left a {
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.footer-left a:hover {
-  color: #c084fc;
-}
-
-/* Description */
 .footer-desc {
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
   opacity: 0.8;
 }
 
-/* ===============================
-   HEADER FOOTER-RIGHT
-   =============================== */
+/* ============================================
+   HEADER DROITE
+   ============================================ */
 .footer-right-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
 }
 
-.footer-right-header h3 {
-  margin-bottom: 0;
-}
-
-/* ===============================
-   BOUTON SCROLL TOP
-   =============================== */
+/* Bouton scroll top */
 .scroll-top-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid transparent;
-  color: white;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 8px;
   text-decoration: none;
-  transition: 0.3s ease;
-  flex-shrink: 0;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #1a3a5c; /* bleu header */
+
+  transition: all 0.25s ease;
 }
 
 .scroll-top-btn:hover {
-  border-color: #c084fc;
-  background: rgba(192, 132, 252, 0.15);
-  box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
-  color: #c084fc;
+  background-color: rgba(255, 255, 255, 0.75);
+  transform: translateY(-2px);
 }
 
-/* ===============================
-   FORMULAIRE CONTACT
-   =============================== */
+/* ============================================
+   FORMULAIRE
+   ============================================ */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 10px 12px;
-  border-radius: 15px;
-  border: 2px solid transparent;
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
-  outline: none;
-  transition: 0.3s;
+  padding: 0.6rem 0.7rem;
+  border-radius: 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
+
+  font-size: 0.9rem;
+  color: #1a3a5c; /* texte bleu header */
+
+  transition: all 0.25s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border: 2px solid #c084fc;
-  box-shadow: 0 0 10px rgba(192, 132, 252, 0.6);
+  outline: none;
+  border-color: rgba(80, 140, 180, 0.5);
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
+/* textarea taille */
 .contact-form textarea {
-  resize: none;
-  height: 100px;
+  resize: vertical;
+  min-height: 80px;
 }
 
+/* bouton */
 .contact-form button {
-  margin-top: 5px;
-  padding: 10px;
-  border-radius: 20px;
-  border: 2px solid transparent;
-  background: rgba(255, 255, 255, 0.05);
+  margin-top: 0.3rem;
+  padding: 0.6rem;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #1a3a5c; /* bleu header */
   color: white;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
   cursor: pointer;
-  transition: 0.3s;
+
+  transition: all 0.25s ease;
 }
 
 .contact-form button:hover {
-  border: 2px solid #c084fc;
-  background: rgba(192, 132, 252, 0.15);
-  box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
+  background-color: #0d2a45; /* bleu foncé hover */
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 1.8rem;
+    padding: 2rem 1.4rem;
+  }
+
+  .footer-right-header {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer h3 {
+    font-size: 1.05rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.85rem;
+  }
 }

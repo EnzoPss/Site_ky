@@ -5,12 +5,10 @@ import { Footer } from "./components/footer/footer";
 import { Profil } from "./components/profil/profil";
 import { Competences } from "./components/competences/competences";
 import { Parcours } from "./components/parcours/parcours";
-import { Projets } from "./components/projets/projets";
-import { Veille } from "./components/veille/veille";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, Profil, Competences, Parcours, Projets, Veille],
+  imports: [RouterOutlet, Header, Footer, Profil, Competences, Parcours],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

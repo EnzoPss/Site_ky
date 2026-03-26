@@ -1,85 +1,23 @@
 /* ===== BODY & BASE ===== */
 body {
   margin: 0;
-  background: radial-gradient(circle at center, #0a0a0f, #020205 70%);
+  background: radial-gradient(circle at top, #eaf4fb, #d6eaf7 60%, #c4e0f2 100%);
   overflow-x: hidden;
   font-family: sans-serif;
 }
+
 .layout { display: flex; position: relative; }
 .main { flex: 1; margin-left: 10px; }
-h1, h2, h3, p { color: aliceblue; }
 
-/* ===== BACKGROUND ===== */
+h1, h2, h3 {
+  color: #1a3a5c;
+}
+
+p {
+  color: #3a6a8a;
+}
+
+/* ===== BACKGROUND (simplifié) ===== */
 .background {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* ===== BASE CIRCLE ===== */
-.circle {
-  position: absolute;
-  border-radius: 50%;
-  transform-origin: center;
-  animation: lavaRise var(--speed) linear infinite;
-  animation-delay: var(--delay);
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  background: radial-gradient(circle at center, var(--color) 60%, transparent 100%);
-  opacity: 0.55;
-  filter: blur(5px);
-  width: calc(180px * var(--size));
-  height: calc(180px * var(--size));
-  top: 110%;
-  left: var(--left);
-}
-
-/* ===== VARIATIONS ===== */
-.circle:nth-child(1)  { --left: 10%; --size: 0.3;  --speed: 16s; --color: #00c8ff; --delay: -2s;  }
-.circle:nth-child(2)  { --left: 30%; --size: 1.6;  --speed: 24s; --color: #7b2fff; --delay: -7s;  }
-.circle:nth-child(3)  { --left: 52%; --size: 0.5;  --speed: 19s; --color: #00ffcc; --delay: -4s;  }
-.circle:nth-child(4)  { --left: 68%; --size: 1.8;  --speed: 27s; --color: #0066ff; --delay: -11s; }
-.circle:nth-child(5)  { --left: 82%; --size: 0.4;  --speed: 21s; --color: #00e5ff; --delay: -1s;  }
-.circle:nth-child(6)  { --left: 3%;  --size: 1.5;  --speed: 17s; --color: #00ffcc; --delay: -9s;  }
-.circle:nth-child(7)  { --left: 22%; --size: 0.25; --speed: 23s; --color: #9b30ff; --delay: -5s;  }
-.circle:nth-child(8)  { --left: 44%; --size: 1.7;  --speed: 20s; --color: #00b4d8; --delay: -13s; }
-.circle:nth-child(9)  { --left: 63%; --size: 0.6;  --speed: 25s; --color: #3d9bff; --delay: -3s;  }
-.circle:nth-child(10) { --left: 88%; --size: 1.8;  --speed: 15s; --color: #00ffaa; --delay: -8s;  }
-
-/* ===== ANIMATION LAMPE À LAVE ===== */
-@keyframes lavaRise {
-  0% {
-    transform: translateY(0) scaleX(1) scaleY(1) rotate(0deg);
-    opacity: 0;
-  }
-  3% {
-    transform: translateY(-1vh) scaleX(0.965) scaleY(1.05) rotate(25deg);
-    opacity: 0.55;
-  }
-  10% {
-    transform: translateY(-5vh) scaleX(0.955) scaleY(1.06) rotate(80deg);
-  }
-  20% {
-    transform: translateY(-20vh) scaleX(1.04) scaleY(0.97) translateX(-10px) rotate(200deg);
-  }
-  40% {
-    transform: translateY(-40vh) scaleX(0.965) scaleY(1.04) translateX(8px) rotate(400deg);
-  }
-  55% {
-    transform: translateY(-55vh) scaleX(1.05) scaleY(0.96) translateX(-6px) rotate(560deg);
-  }
-  60% {
-    transform: translateY(-60vh) scaleX(1.035) scaleY(0.97) translateX(-6px) rotate(650deg);
-  }
-  80% {
-    transform: translateY(-80vh) scaleX(0.97) scaleY(1.035) translateX(7px) rotate(900deg);
-  }
-  92% { opacity: 0.35; }
-  100% {
-    transform: translateY(-112vh) scaleX(1) scaleY(1) translateX(0) rotate(1080deg);
-    opacity: 0;
-  }
+  display: none;
 }

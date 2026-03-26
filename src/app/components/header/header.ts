@@ -1,33 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './header.html',
-  styleUrl: './header.css',
+  styleUrls: ['./header.css']
 })
-export class Header {
-  private isClicking = false;
+export class Header implements OnInit {
+  isScrolled = false;
 
-  onMouseEnter(): void {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar?.classList.remove('collapsed');
-  }
+  // --- Personnalisation ---
+  profileImage = 'https://www.photofunky.net/output/image/b/a/0/9/ba0992/photofunky.gif'; // Remplace par le chemin de ton image
+  firstName = 'Kyliann';
+  lastName = 'MEDERIC '/*Nanette'*/;
+  tagline = 'Commercial';
+  // ------------------------
 
-  onMouseLeave(): void {
-    if (this.isClicking) return; // Ne pas réduire pendant un clic
-    const sidebar = document.querySelector('.sidebar');
-    sidebar?.classList.add('collapsed');
-  }
+  ngOnInit(): void {}
 
-  onMouseDown(): void {
-    this.isClicking = true;
-  }
-
-  onMouseUp(): void {
-    // Petit délai pour laisser la navigation se faire
-    setTimeout(() => {
-      this.isClicking = false;
-    }, 300);
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    this.isScrolled = scrollY > 40;
   }
 }
