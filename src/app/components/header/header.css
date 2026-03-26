@@ -1,0 +1,146 @@
+/* ===============================
+   SIDEBAR PRINCIPALE
+   =============================== */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  overflow-y: auto;
+  background: rgba(27, 0, 54, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 0 40px rgba(120, 0, 255, 0.3);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.4s ease, padding 0.4s ease;
+  scrollbar-width: none;
+}
+
+/* État réduit */
+.sidebar.collapsed {
+  width: 60px;
+  padding: 200px 10px;
+}
+
+/* ===============================
+   NAVIGATION
+   =============================== */
+nav ul {
+  list-style: none;
+  margin-top: 30px;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 8px 0;
+}
+
+/* Boutons */
+nav ul li a {
+  display: block;
+  padding: 12px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+ 
+}
+
+/* Hover effet violet clair */
+nav ul li a:hover {
+  border: 2px solid #c084fc;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
+  background: rgba(192, 132, 252, 0.15);
+  transform: translateX(5px);
+}
+
+/* Boutons en mode collapsed = petits ronds centrés */
+.sidebar.collapsed nav ul li a {
+  padding: 12px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  
+}
+
+.sidebar:not(.collapsed) nav ul li a {
+  border-radius: 25px;
+  width: auto;
+  height: auto;
+  display: block;
+
+  padding: 12px 15px;
+}
+
+.sidebar:not(.collapsed) nav ul svg{
+    margin-right: 15px ;
+    margin-bottom: 10px;
+    
+}
+
+/* Texte dans les liens */
+nav ul li a span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, max-width 0.4s ease;
+  max-width: 200px;
+  opacity: 1;
+}
+
+.sidebar.collapsed nav ul li a span {
+  display: none;
+  opacity: 0;
+  max-width: 0;
+}
+
+/* ===============================
+   SOCIAL LINKS
+   =============================== */
+.social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.3s ease, flex-direction 0.3s ease;
+}
+
+.sidebar.collapsed .social-links {
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.social-links a {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  border-color: #c084fc;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
+  background: rgba(192, 132, 252, 0.2);
+}
